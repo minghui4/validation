@@ -1,0 +1,12 @@
+#!/bin/bash
+list=`ls`
+arr=($list)
+length=${#arr[@]}
+for (( j=0; j<${length}; j++ ));
+do
+	name=${arr[j]}
+	firstchar=${name:0:1}
+	if [[ "$firstchar" =~ [A-Z] ]]; then
+		mv "${arr[j]}" "/tmp/u/"
+	fi
+done
